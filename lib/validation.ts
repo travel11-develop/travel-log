@@ -38,7 +38,7 @@ export function validatePostMeta(data: any): asserts data is PostMeta {
     "end_date",
     "area",
     "tags",
-    "cover_image",
+    // "cover_image",
     "locations"
   ];
 
