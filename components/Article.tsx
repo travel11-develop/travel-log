@@ -1,4 +1,13 @@
+'use client';
+
+import dynamic from "next/dynamic";
 import { PostMeta } from "@/lib/types";
+import RouteTimeline from "./RouteTimeline";
+
+// SSR回避
+const Map = dynamic(() => import("./Map"), {
+  ssr: false,
+});
 
 type Props = {
   meta: PostMeta;
@@ -7,7 +16,7 @@ type Props = {
 
 export default function Article({ meta, contentHtml }: Props) {
   return (
-    <article className="max-w-3xl mx-auto px-4 py-12">
+    <article className="max-w-4xl mx-auto px-4 py-12">
       <header className="mb-8 pb-8 border-b border-gray-200">
         <h1 className="text-4xl font-bold mb-4 text-gray-900">{meta.title}</h1>
 
@@ -40,6 +49,27 @@ export default function Article({ meta, contentHtml }: Props) {
         </div>
       )}
 
+      {/* 移動ルートセクション */}
+      <div className="mb-8">
+        <h2 className="text-2xl font-bold mb-6 pb-4 border-b-2 border-blue-500">移動ルート</h2>
+
+        {/* マップと移動スケジュールを横に並べる */}
+        <div className="flex gap-8">
+          {/* 地図（左側） */}
+          {meta.locations?.length > 0 && (
+            <div className="flex-1">
+              <Map locations={meta.locations} />
+            </div>
+          )}
+
+          {/* ルートタイムライン（右側） */}
+          <div className="flex-1">
+            <RouteTimeline routes={meta.routes} />
+          </div>
+        </div>
+      </div>
+
+      {/* 本文 */}
       <div
         className="prose prose-lg max-w-none"
         dangerouslySetInnerHTML={{ __html: contentHtml }}

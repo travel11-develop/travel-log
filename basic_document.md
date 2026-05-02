@@ -30,6 +30,8 @@
 
 ```
 /app
+  layout.tsx
+  page.tsx
   /posts
     /[slug]
       page.tsx
@@ -42,6 +44,9 @@
 /content
   /posts
     2024-kyoto-trip.md
+
+/lib
+  (ユーティリティ関数など)
 
 /public
   /images

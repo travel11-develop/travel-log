@@ -19,7 +19,7 @@ function isValidRoute(data: any): data is Route {
   return (
     typeof data === "object" &&
     data !== null &&
-    (data.type === "train" || data.type === "bus") &&
+    (data.type === "train" || data.type === "bus" || data.type === "walk" || data.type === "taxi") &&
     typeof data.from === "string" &&
     data.from.length > 0 &&
     typeof data.to === "string" &&
