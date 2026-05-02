@@ -7,7 +7,7 @@ area: "近畿"
 tags:
   - 寺院
   - 観光
-cover_image: "/images/2026-kyoto-trip/cover.jpg"
+cover_image: "/images/2026-kyoto-trip/cover.png"
 
 locations:
   - name: "京都駅"
