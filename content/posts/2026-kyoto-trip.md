@@ -1,5 +1,5 @@
 ---
-title: "京都旅行 2026"
+title: "京都旅行 2026 (テスト投稿)"
 slug: "2026-kyoto-trip"
 start_date: "2026-04-01"
 end_date: "2026-04-03"
@@ -16,6 +16,9 @@ locations:
   - name: "清水寺"
     lat: 34.9948
     lng: 135.7850
+  - name: "伏見稲荷大社"
+    lat: 34.9671212
+    lng: 135.77264063
 
 routes:
   - type: "train"
@@ -23,15 +26,22 @@ routes:
     to: "京都駅"
     departure_time: "08:00"
     arrival_time: "10:15"
-    stops:
-      - "東京"
-      - "品川"
-      - "新横浜"
-      - "名古屋"
-      - "京都"
+    stops: []
+  - type: "bus"
+    from: "京都駅"
+    to: "清水寺"
+    departure_time: "10:30"
+    arrival_time: "10:50"
+    stops: []
+  - type: "bus"
+    from: "清水寺"
+    to: "伏見稲荷大社"
+    departure_time: "12:00"
+    arrival_time: "12:45"
+    stops: []
 ---
 
-## 1日目
+## １Day
 
 ### 京都駅
 到着後の様子...
